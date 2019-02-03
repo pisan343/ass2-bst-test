@@ -644,7 +644,7 @@ void test_joshumax01() {
     cout << "Starting " << __func__ << endl;
     // Type construction
     BST<int> bi;
-    BST<string> bs;
+    BST <string> bs;
     BST<bool> bb;
     BST<char> bc;
 
@@ -702,7 +702,7 @@ void test_joshumax01() {
 
     // Done
     cout << "Ending " << __func__ << endl;
-
+}
 void test_jhpp114() {
   cout << "Starting test_jhpp114" << endl;
   cout << "Test add, numberOfNode function" << endl;
@@ -1321,6 +1321,43 @@ void test_dariavo01(){
   cout << "Ending test_dariavo01" << endl;
 }
 
+void test_rengar(){
+    cout << "\n\n* Starting test_rengar" << endl;
+    cout << "* Testing remove, and contain" << endl;
+
+    BST <string> t;
+    t.Add("a");
+    t.Add("b");
+    t.Add("c");
+    t.Add("d");
+    t.Add("e");
+    t.Add("f");
+
+    assert(t.Containts("a"));
+    assert(t.Containts("b"));
+    assert(t.Containts("c"));
+    assert(t.Containts("d"));
+    assert(t.Containts("e"));
+    assert(t.Containts("f"));
+
+    assert(t.remove("a"));
+    assert(!(t.contains("a")));
+    assert(t.remove("b"));
+    assert(!(t.contains("b")));
+    assert(t.remove("c"));
+    assert(!(t.contains("c")));
+    assert(t.remove("d"));
+    assert(!(t.contains("d")));
+    assert(t.remove("e"));
+    assert(!(t.contains("e")));
+    assert(t.remove("f"));
+    assert(!(t.contains("f")));
+
+    cout << "Ending test_rengar" << endl;
+}
+
+
+
 	
 // Calling all test functions
 void testBSTAll() {
@@ -1362,6 +1399,7 @@ void testBSTAll() {
   test_ravi01();
   test_sep9201();
   test_dariavo01();
+  test_rengar();
 }
 
 TEST_CASE("BST Tests") {
